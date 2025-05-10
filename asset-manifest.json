@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/techtronic/static/css/main.b0b607cb.css",
+    "main.js": "/techtronic/static/js/main.fa6164b3.js",
+    "static/js/453.4554b431.chunk.js": "/techtronic/static/js/453.4554b431.chunk.js",
+    "index.html": "/techtronic/index.html",
+    "main.b0b607cb.css.map": "/techtronic/static/css/main.b0b607cb.css.map",
+    "main.fa6164b3.js.map": "/techtronic/static/js/main.fa6164b3.js.map",
+    "453.4554b431.chunk.js.map": "/techtronic/static/js/453.4554b431.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0b607cb.css",
+    "static/js/main.fa6164b3.js"
+  ]
+}
