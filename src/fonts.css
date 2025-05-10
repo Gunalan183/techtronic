@@ -1,0 +1,30 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Chopsic&display=swap');
+
+/* Fallback for Chopsic font using a similar style */
+@font-face {
+  font-family: 'Chopsic';
+  src: url('https://fonts.cdnfonts.com/s/34074/Chopsic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Revolving Dor font for space-themed text */
+@font-face {
+  font-family: 'RevolvingDor';
+  src: url('https://see.fontimg.com/api/rf5/gxvd4/MjQ1NzkwMjcwZTU5NDY2YThhZWJiMmE4YjE3ZDRjZjIub3Rm/VEVjaFRyb25pY3MnMjU/revolvingdor.png?r=fs&h=78&w=1500&fg=E6E6E6&bg=FFFFFF&tb=1&s=52') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.chopsic-font {
+  font-family: 'Chopsic', 'Impact', sans-serif;
+  letter-spacing: 1px;
+}
+
+.revolving-dor-font {
+  font-family: 'RevolvingDor', 'Arial', sans-serif;
+  letter-spacing: 2px;
+}

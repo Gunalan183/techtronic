@@ -137,11 +137,11 @@ const Events: React.FC = () => {
       icon: '💻',
       type: 'Technical',
       rules: [
-        'Individual participation only',
-        'Participants will have 2 hours to complete the design',
-        'Any modern frontend framework can be used (React, Vue, Angular, etc.)',
-        'Design must be responsive and follow accessibility guidelines',
-        'Points will be awarded for creativity, usability, and code quality'
+        'Each team should contain 3 members only',
+        ' Participants can use AI tools',
+        'Already designed projects are not allowed',
+        ' 45 mins for designing and 15 minutes for review',
+        ' Designers Must Defend UX Decisions – Brief 2-mins  rationale with each submission'
       ],
       venue: 'IT Lab 2, Main Building',
       time: '10:00 AM - 12:00 PM, Day 1',

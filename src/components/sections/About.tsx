@@ -49,14 +49,15 @@ const About: React.FC = () => {
             className="text-center md:text-left space-y-4"
           >
             <p className="text-lg text-gray-300">
-              <span className="text-neonBlue font-semibold">TECH TRONICS'25</span> is a premier technical symposium organized by the Department of Information Technology, bringing together the brightest minds and tech enthusiasts.
+              <span className="text-neonBlue font-semibold">TECH TRONICS'25</span> is a premier technical symposium hosted by <span className="text-neonGreen font-semibold">Dhanalakshmi Srinivasan College of Engineering and Technology</span>, Department of Information Technology on <span className="text-neonBlue font-semibold">May 17, 2025</span>.
             </p>
             <p className="text-lg text-gray-300">
-              Our symposium presents a fusion of technical and non-technical events designed for enthusiastic learners and competitive individuals. Whether you're a coding expert, a gaming enthusiast, or a creative thinker - we have something exciting for everyone!
+              We cordially invite students, faculty, and technology enthusiasts to join us for this exciting event that brings together the brightest minds in the field of Information Technology. The symposium will feature a diverse range of technical and non-technical events designed to challenge your skills and expand your knowledge.
             </p>
-            <p className="text-lg text-gray-300">
-              Join us for an unforgettable day of innovation, competition, and celebration of technology in all its forms. Explore cutting-edge concepts, showcase your skills, and connect with like-minded tech enthusiasts.
-            </p>
+            {/* <p className="text-lg text-gray-300">
+              Whether you're passionate about coding, interested in emerging technologies, or looking to showcase your creative problem-solving abilities, TECH TRONICS'25 offers a platform for you to shine. Connect with peers, learn from experts, and compete for prestigious awards and recognition.
+            </p> */}
+            
           </motion.div>
           
           <motion.div 
@@ -69,17 +70,17 @@ const About: React.FC = () => {
             <div className="inline-flex space-x-4 items-center justify-center">
               <div className="flex flex-col items-center">
                 <div className="text-4xl font-bold neon-text">8+</div>
-                <div className="text-sm text-gray-400">Exciting Events</div>
+                <div className="text-sm text-gray-400"> Events</div>
               </div>
               <div className="h-10 w-px bg-gray-700"></div>
               <div className="flex flex-col items-center">
-                <div className="text-4xl font-bold neon-text">100+</div>
-                <div className="text-sm text-gray-400">Participants</div>
+                <div className="text-4xl font-bold neon-text">300+</div>
+                <div className="text-sm text-gray-400">Expected Participants</div>
               </div>
               <div className="h-10 w-px bg-gray-700"></div>
               <div className="flex flex-col items-center">
                 <div className="text-4xl font-bold text-neonGreen">₹10K+</div>
-                <div className="text-sm text-gray-400">in Prizes</div>
+                <div className="text-sm text-gray-400">in Prizes & Certificates</div>
               </div>
             </div>
           </motion.div>
@@ -91,31 +92,43 @@ const About: React.FC = () => {
             transition={{ delay: 0.9, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold text-white mb-3 mt-6">General Guidelines</h4>
+            <h4 className="text-lg font-semibold text-white mb-3 mt-6">Event Details & Guidelines</h4>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <svg className="w-5 h-5 text-neonBlue mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-gray-400">All participants must register before the event.</span>
+                <span className="text-gray-400"><span className="text-neonGreen font-semibold">Date:</span> May 17, 2025 (Saturday) | <span className="text-neonGreen font-semibold">Time:</span> 9:00 AM - 4:30 PM</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-5 h-5 text-neonBlue mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-gray-400">Participants must bring their valid college ID card.</span>
+                <span className="text-gray-400"><span className="text-neonGreen font-semibold">Venue:</span> Dhanalakshmi Srinivasan College of Engineering and Technology, Department of Information Technology</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-5 h-5 text-neonBlue mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-gray-400">Late entries will not be accepted.</span>
+                <span className="text-gray-400"><span className="text-neonGreen font-semibold">Registration:</span> All participants must register online before May 15, 2025. On-spot registrations subject to availability.</span>
               </li>
               <li className="flex items-start">
                 <svg className="w-5 h-5 text-neonBlue mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-gray-400">The decision of judges will be final and binding.</span>
+                <span className="text-gray-400"><span className="text-neonGreen font-semibold">Eligibility:</span> Open to all undergraduate and postgraduate students from recognized institutions.</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-5 h-5 text-neonBlue mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-gray-400"><span className="text-neonGreen font-semibold">Requirements:</span> Valid college ID card, registration confirmation, and any specific materials mentioned for individual events.</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-5 h-5 text-neonBlue mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span className="text-gray-400"><span className="text-neonGreen font-semibold">Contact:</span> For queries, reach out to us at <span className="text-neonBlue">techtronics25@dscet.ac.in</span> or call <span className="text-neonBlue">+91 8680964114</span></span>
               </li>
             </ul>
           </motion.div>

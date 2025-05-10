@@ -22,29 +22,113 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-darkBg opacity-50"></div>
       </div>
       
-      {/* Background grid effect on top of video */}
-      <div className="absolute inset-0 bg-[radial-gradient(#00f2ff_1px,transparent_1px)] [background-size:40px_40px] opacity-20 z-10"></div>
+      {/* Animated background grid effect */}
+      <motion.div 
+        className="absolute inset-0 bg-[radial-gradient(#00f2ff_1px,transparent_1px)] [background-size:40px_40px] z-10"
+        initial={{ opacity: 0 }}
+        animate={{ 
+          opacity: [0.1, 0.2, 0.1],
+          scale: [1, 1.05, 1],
+          rotate: [0, 1, 0]
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          repeatType: "reverse"
+        }}
+      ></motion.div>
       
-      <div className="container mx-auto px-4 text-center z-10">
+      {/* Second animated grid with different size and color */}
+      <motion.div 
+        className="absolute inset-0 bg-[radial-gradient(#b300ff_0.8px,transparent_0.8px)] [background-size:30px_30px] z-10"
+        initial={{ opacity: 0 }}
+        animate={{ 
+          opacity: [0.05, 0.15, 0.05],
+          scale: [1, 1.1, 1],
+          rotate: [0, -1, 0]
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          repeatType: "reverse",
+          delay: 1
+        }}
+      ></motion.div>
+      
+      <div className="container mx-auto px-4 text-center z-10 relative">
+        {/* Royal decorative elements */}
+        <div className="hidden md:flex justify-center mb-4">
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-2"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-2"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-transparent via-yellow-300 to-transparent mx-2"></div>
+        </div>
         <motion.div 
-          className="flex justify-center text-4xl md:text-6xl lg:text-8xl font-bold mb-4"
+          className="flex flex-wrap justify-center text-4xl md:text-6xl lg:text-8xl font-bold mb-6 revolving-dor-font tracking-wider"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          style={{
+            fontFamily: "'RevolvingDor', 'Arial', sans-serif",
+            textShadow: '0 0 10px rgba(179, 0, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.4), 0 0 30px rgba(255, 215, 0, 0.3)',
+            transform: 'perspective(800px) rotateX(5deg)',
+            background: 'linear-gradient(to bottom, #ffd700, #f5f5f5, #ffd700)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            borderBottom: '2px solid rgba(255, 215, 0, 0.3)',
+            paddingBottom: '10px',
+            position: 'relative',
+          }}
         >
-          {letters.map((letter, i) => (
-            <motion.span
-              key={i}
-              className={`${letter === ' ' ? 'mx-2' : ''} ${i % 3 === 0 ? 'text-neonBlue' : i % 3 === 1 ? 'text-neonPurple' : 'text-neonGreen'}`}
-              style={{
-                textShadow: `0 0 5px ${i % 3 === 0 ? 'rgba(0, 242, 255, 0.8)' : i % 3 === 1 ? 'rgba(179, 0, 255, 0.8)' : 'rgba(57, 255, 20, 0.8)'}, 
-                           0 0 10px ${i % 3 === 0 ? 'rgba(0, 242, 255, 0.5)' : i % 3 === 1 ? 'rgba(179, 0, 255, 0.5)' : 'rgba(57, 255, 20, 0.5)'}`
-              }}
-            >
-              {letter}
-            </motion.span>
-          ))}
+          {letters.map((letter, i) => {
+            // Determine if the letter is part of TECH or '25 (should be neon blue)
+            // or part of TRONICS (should be neon white)
+            // All letters will have the royal gold gradient look
+            const textColor = 'text-transparent'; // Using transparent as we'll use gradient
+            
+            // Royal gold shadow effect
+            const shadowColor = 
+              '0 0 5px rgba(255, 215, 0, 0.8), 0 0 15px rgba(255, 215, 0, 0.5), 0 0 25px rgba(179, 0, 255, 0.3)';
+            
+            const hoverShadowColor = 
+              '0 0 10px rgba(255, 215, 0, 0.9), 0 0 20px rgba(255, 215, 0, 0.7), 0 0 30px rgba(179, 0, 255, 0.5)';
+            
+            return (
+              <motion.span
+                key={i}
+                className={`${letter === ' ' ? 'mx-2' : 'mx-[1px] md:mx-[2px]'} inline-block ${textColor}`}
+                style={{
+                  textShadow: shadowColor,
+                  transition: 'all 0.2s ease-out',
+                  background: 'linear-gradient(to bottom, #ffd700, #f8f8f8, #daa520)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  fontWeight: 'bold',
+                }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ 
+                  opacity: 1, 
+                  y: 0,
+                  transition: { delay: 0.2 + (i * 0.05) }
+                }}
+                whileHover={{
+                  scale: 1.2,
+                  rotate: Math.random() > 0.5 ? 5 : -5,
+                  textShadow: hoverShadowColor,
+                  transition: { duration: 0.2, ease: "easeOut" }
+                }}
+              >
+                {letter}
+              </motion.span>
+            );
+          })}
         </motion.div>
+        
+        {/* Royal decorative elements after title */}
+        <div className="hidden md:flex justify-center mb-8">
+          <div className="w-32 h-1 bg-gradient-to-r from-transparent via-yellow-300 to-transparent mx-2"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-2"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-2"></div>
+        </div>
         
         <motion.p 
           className="text-xl md:text-2xl mb-8 text-gray-300"
@@ -61,11 +145,11 @@ const Hero: React.FC = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.05, transition: { duration: 0.2, ease: "easeOut" } }}
+          whileTap={{ scale: 0.95, transition: { duration: 0.1 } }}
           onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSc0ah4dimSpBz5J43KtCz0amwBWi-WTYdG_xaUinI1g9engEA/viewform', '_blank')}
         >
-          <span className="absolute inset-0 bg-neonBlue/20 group-hover:bg-neonBlue/30 transition-all duration-300"></span>
+          <span className="absolute inset-0 bg-neonBlue/20 group-hover:bg-neonBlue/30 transition-all duration-200"></span>
           <span className="relative z-10 flex items-center justify-center">
             <span>Register Now</span>
             <span className="ml-2 animate-pulse-slow">→</span>

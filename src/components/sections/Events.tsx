@@ -42,7 +42,7 @@ const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
           <h3 className="text-2xl font-bold text-white neon-text neon-blue">{event.title}</h3>
           <button 
             onClick={onClose}
-            className="text-gray-400 hover:text-white transition-colors"
+            className="text-gray-400 hover:text-white transition-colors duration-150"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -159,7 +159,7 @@ const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
           
           <div className="pt-4 border-t border-gray-700">
             <button 
-              className="w-full py-2 bg-neonBlue/20 hover:bg-neonBlue/30 text-neonBlue rounded-md transition-colors font-medium"
+              className="w-full py-2 bg-neonBlue/20 hover:bg-neonBlue/30 text-neonBlue rounded-md transition-colors duration-150 font-medium"
               onClick={onClose}
             >
               Close
@@ -184,17 +184,19 @@ const Events: React.FC = () => {
       icon: '💻',
       type: 'Technical',
       rules: [
-        'Individual participation only',
-        'Participants will have 2 hours to complete the design',
-        'Any modern frontend framework can be used (React, Vue, Angular, etc.)',
-        'Design must be responsive and follow accessibility guidelines',
-        'Points will be awarded for creativity, usability, and code quality'
+        'Each team should contain 3 members only',
+        ' Participants can use AI tools',
+        'Already designed projects are not allowed',
+        ' 45 mins for designing and 15 minutes for review',
+        ' Designers Must Defend UX Decisions – Brief 2-mins  rationale with each submission',
+        'Code should be responsible.'
       ],
-      venue: 'IT Lab 2, Main Building',
-      time: '10:00 AM - 12:00 PM, Day 1',
+      venue: 'IT Lab ',
+      time: '10:00 AM - 12:00 PM ',
       coordinators: [
-        { name: 'Arun Kumar', phone: '9876543210' },
-        { name: 'Priya Singh', phone: '9876543211' }
+        { name: '  SIVA SANJAY K ', phone: '9342806827' },
+        { name: ' DARUNKISHORE C', phone: '9855405872' },
+        { name: '  SRIMATHI K', phone: '9855405872' }
       ]
     },
     {
@@ -204,17 +206,19 @@ const Events: React.FC = () => {
       icon: '📝',
       type: 'Technical',
       rules: [
-        'Team of 2 members maximum',
-        '10 minutes for presentation followed by 5 minutes Q&A',
-        'Abstract submission required before the event',
-        'Plagiarism will result in disqualification',
-        'PowerPoint or similar presentation tools allowed'
+        ' Maximum Number of participants is 4',
+        'The slide count should be within 7 slides',
+        'Topics must relate to AI, IOT,CRYPTO(BITCOIN)',
+        'More priorities for hands-on projects',
+        'Maintain professionalism & keep idea confidential',
+        'Each presentation is strictly 5-minutes no overruns.'
       ],
-      venue: 'Seminar Hall, IT Block',
-      time: '2:00 PM - 5:00 PM, Day 1',
+      venue: 'IT lab',
+      time: '10.00AM - 12.00PM',
       coordinators: [
-        { name: 'Ravi Shankar', phone: '9876543212' },
-        { name: 'Meera Patel', phone: '9876543213' }
+        { name: ' SRINITHI D', phone: '9876543212' },
+        { name: 'Vijay srinivas S', phone:  '9123536026' },
+        { name: 'VISHVA PRIYA S', phone:  '9123536026' }
       ]
     },
     {
@@ -224,17 +228,22 @@ const Events: React.FC = () => {
       icon: '🐛',
       type: 'Technical',
       rules: [
-        'Individual participation',
-        'Multiple programming languages supported (C++, Java, Python)',
-        '90 minutes to fix all bugs in the given programs',
-        'Points based on number of bugs fixed and time taken',
-        'No external resources allowed except official documentation'
+        ' Mobile phones will not be allowed',
+        ' Internet connections will not be provided',
+        'Avoid unnecessary malpractice',
+        'Three rounds will be conducted with time constraints',
+        ' I Round : 20 minutes',
+ 'II Round : 15 minutes',
+ 'III Round : 10 minutes',
+ ' Last 15 minutes for review',
+ 'Languages - python , java',
       ],
-      venue: 'IT Lab 1, Main Building',
-      time: '9:00 AM - 10:30 AM, Day 2',
+      venue: 'IT Lab ',
+      time: '10:00AM',
       coordinators: [
-        { name: 'Vikram Joshi', phone: '9876543214' },
-        { name: 'Neha Sharma', phone: '9876543215' }
+        { name: 'KAMESHWARAN S', phone: '8610863860' },
+        { name: ' MADHUMITHA V ', phone: '9360464095' },
+        { name: 'SANJAY ELANGOVAN', phone: '9360464095' }
       ]
     },
     {
@@ -244,17 +253,19 @@ const Events: React.FC = () => {
       icon: '🔐',
       type: 'Technical',
       rules: [
-        'Team of 2 members',
-        'Multiple rounds of increasing difficulty',
-        'Knowledge of basic cryptography algorithms required',
-        'Time limit of 2 hours for all challenges',
-        'First team to solve all challenges wins'
+        ' Each team must consist of 2 members',
+        ' Participants are required to bring their own mobile phone or laptop for the event',
+        'Charging facilities may be limited',
+        'Internet connections will not be provided',
+        'Teams must complete the challenges within the given  time limit',
+        'Participants must report to the venue on time. Late  entries will not be entertained.'
       ],
-      venue: 'Computer Center, 2nd Floor',
-      time: '1:00 PM - 3:00 PM, Day 2',
+      venue: 'IT lab',
+      time: '10:00am',
       coordinators: [
-        { name: 'Kamal Verma', phone: '9876543216' },
-        { name: 'Anjali Gupta', phone: '9876543217' }
+        { name: 'SHUBHANSHU NAVADIYA', phone: '9876543216' },
+        { name: 'RAKESH K', phone: '9345494500' },
+        { name: 'VARSHA K', phone: '9345494500' }
       ]
     },
     {
@@ -264,17 +275,17 @@ const Events: React.FC = () => {
       icon: '🏏',
       type: 'Non-Technical',
       rules: [
-        'Teams of 3 members',
-        'Virtual currency provided for bidding',
-        'Must create a balanced team within budget',
-        'Knowledge of cricket players and their performances is crucial',
-        'Judging based on team composition, strategy, and budget management'
+        'Teams of 4 members',
+       'Virtual IPL auction simulation',
+       'Budget allocation, strategy, and bidding skills will be judged',
+       ' Team with the best-balanced squad wins'
       ],
-      venue: 'Auditorium, Ground Floor',
-      time: '11:00 AM - 1:00 PM, Day 1',
+      venue: 'classroom 512',
+      time: '11:00 AM ',
       coordinators: [
-        { name: 'Rahul Khanna', phone: '9876543218' },
-        { name: 'Divya Kapoor', phone: '9876543219' }
+        { name: ' JOHNIE N', phone: '9876543218' },
+        { name: ' MANIKANDAN B', phone: '9962366872' },
+        { name: ' SANTHOSH KUMAR M', phone: '9962366872' }
       ]
     },
     {
@@ -284,17 +295,24 @@ const Events: React.FC = () => {
       icon: '🧩',
       type: 'Non-Technical',
       rules: [
-        'Individual or team of 2',
-        'Multiple rounds with increasing difficulty',
-        'Limited time to memorize images or patterns',
-        'Points awarded for correct connections identified',
-        'Finals will be conducted with audience participation'
+        'Round -1(Connection)',
+        ' Maximum Number of participants is 2.',
+        'Pictures will be displayed, Team members can discuss  among themselves',
+        ' Observe the pictures carefully before answering.',
+        ' The word which should find ,It will be a movie name or  song (first line)',
+        'Round-2(Memorize the image)',
+        ' Look Carefully :You will be shown one or more images for  a limited time (30 seconds)',
+        ' Memory Only :After the image is hidden, Questions may  ask about specific details, object positions, colors, numbers, or the order of things',
+        ' Be Honest :Play fair to keep the game fun for everyone!',
+        ' One Answer per Question :You will be allowed to give one  answer per question',
+        '  Have Fun! :Enjoy the game, whether you win or not'
       ],
-      venue: 'Classroom 103, IT Block',
-      time: '3:00 PM - 5:00 PM, Day 2',
+      venue: 'Classroom 513',
+      time: '10:30AM',
       coordinators: [
-        { name: 'Suresh Menon', phone: '9876543220' },
-        { name: 'Tanya Roy', phone: '9876543221' }
+        { name: 'MOHAMED MOOSHA S', phone: '9876543220' },
+        { name: 'HARISHETHIRA R', phone: '8072951693' },
+        { name: 'GOWTHAM PRABAGARAN S', phone: '8072951693' }
       ]
     },
     {
@@ -304,17 +322,21 @@ const Events: React.FC = () => {
       icon: '🎮',
       type: 'Non-Technical',
       rules: [
-        'Squad match (4 players per team)',
-        'Custom room matches',
-        'Points based on placement and eliminations',
-        'Players must bring their own device and internet connection',
-        'Multiple rounds with top teams advancing to finals'
+        ' CLASH SQUAD match will be conducted',
+        'Squad mode will played & players should  bring your own team and phone and internet',
+        'No hack or cheats',
+        ' No team up with opponents',
+        ' Any offensive and mis- behaviour of team  member will disqualify whole team',
+        ' Map and mode will be announced on the day'
+        
+
       ],
       venue: 'E-Sports Arena, Student Center',
-      time: '4:00 PM - 7:00 PM, Day 1',
+      time: '11:00AM',
       coordinators: [
-        { name: 'Akash Patel', phone: '9876543222' },
-        { name: 'Sneha Reddy', phone: '9876543223' }
+        { name: ' SHIGIN K S', phone: '7695986629' },
+        { name: 'RAGUL K', phone: '7904978433' },
+        { name: 'RSANJAY S K ', phone: '9876543223' }
       ]
     },
     {
@@ -324,17 +346,16 @@ const Events: React.FC = () => {
       icon: '♟️',
       type: 'Non-Technical',
       rules: [
-        'Individual participation',
-        'Standard FIDE rules apply',
-        'Swiss tournament format with time controls',
-        'Participants should bring their own chess clocks if possible',
-        'Tie-breaking will be resolved according to standard chess regulations'
+        ' Both online and offline depends on board availability',
+        ' Only 10 minutes per match',
+        ' knock out - round'
       ],
-      venue: 'Reading Room, Library Building',
-      time: '10:00 AM - 4:00 PM, Day 2',
+      venue: 'Classroom 515',
+      time: '10:00 AM',
       coordinators: [
-        { name: 'Neeraj Chopra', phone: '9876543224' },
-        { name: 'Tanvi Shah', phone: '9876543225' }
+        { name: 'PAPPU KUMAR ', phone: '9876543224' },
+        { name: 'AL AMEEM H', phone: '7904610976' },
+        { name: 'PRAVEENRAJ K', phone: '9876543225' }
       ]
     },
   ];
@@ -438,19 +459,19 @@ const Events: React.FC = () => {
         <div className="flex justify-center mb-10">
           <div className="inline-flex rounded-md overflow-hidden neon-glow-subtle">
             <button
-              className={`px-6 py-3 text-sm font-medium transition-colors ${activeTab === 'all' ? 'bg-neonBlue/30 text-white' : 'bg-darkBg/80 text-gray-300 hover:bg-neonBlue/10'}`}
+              className={`px-6 py-3 text-sm font-medium transition-colors duration-150 ${activeTab === 'all' ? 'bg-neonBlue/30 text-white' : 'bg-darkBg/80 text-gray-300 hover:bg-neonBlue/10'}`}
               onClick={() => setActiveTab('all')}
             >
               All Events
             </button>
             <button
-              className={`px-6 py-3 text-sm font-medium transition-colors ${activeTab === 'technical' ? 'bg-neonBlue/30 text-white' : 'bg-darkBg/80 text-gray-300 hover:bg-neonBlue/10'}`}
+              className={`px-6 py-3 text-sm font-medium transition-colors duration-150 ${activeTab === 'technical' ? 'bg-neonBlue/30 text-white' : 'bg-darkBg/80 text-gray-300 hover:bg-neonBlue/10'}`}
               onClick={() => setActiveTab('technical')}
             >
               Technical
             </button>
             <button
-              className={`px-6 py-3 text-sm font-medium transition-colors ${activeTab === 'nonTechnical' ? 'bg-neonBlue/30 text-white' : 'bg-darkBg/80 text-gray-300 hover:bg-neonBlue/10'}`}
+              className={`px-6 py-3 text-sm font-medium transition-colors duration-150 ${activeTab === 'nonTechnical' ? 'bg-neonBlue/30 text-white' : 'bg-darkBg/80 text-gray-300 hover:bg-neonBlue/10'}`}
               onClick={() => setActiveTab('nonTechnical')}
             >
               Non-Technical
@@ -468,7 +489,7 @@ const Events: React.FC = () => {
           {filteredEvents.map((event, index) => (
             <motion.div
               key={event.id}
-              className={`glass-card p-6 rounded-lg transition-all duration-300 relative overflow-hidden ${hoveredEvent === event.id ? 'glow-card' : ''}`}
+              className={`glass-card p-6 rounded-lg transition-all duration-200 relative overflow-hidden ${hoveredEvent === event.id ? 'glow-card' : ''}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -494,7 +515,7 @@ const Events: React.FC = () => {
                   Register
                 </button>
                 <button 
-                  className="px-4 py-2 rounded-md text-sm font-medium border border-neonGreen/50 text-neonGreen hover:bg-neonGreen/10 transition-colors"
+                  className="px-4 py-2 rounded-md text-sm font-medium border border-neonGreen/50 text-neonGreen hover:bg-neonGreen/10 transition-colors duration-150"
                   onClick={() => handleMoreInfo(event)}
                 >
                   More Info

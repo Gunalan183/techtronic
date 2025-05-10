@@ -9,15 +9,28 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2 lg:col-span-1">
-            <motion.h3 
-              className="text-2xl font-bold mb-4 neon-text"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              TECH TRONICS'25
-            </motion.h3>
+            <div className="flex flex-wrap justify-start">
+              <motion.h3 
+                className="text-2xl font-bold mb-4 flex chopsic-font"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+              >
+                {['T', 'E', 'C', 'H', ' ', 'T', 'R', 'O', 'N', 'I', 'C', 'S', "'", '2', '5'].map((letter, i) => (
+                  <motion.span
+                    key={i}
+                    className={`${letter === ' ' ? 'mx-1' : ''} text-neonBlue`}
+                    style={{
+                      textShadow: `0 0 3px rgba(0, 242, 255, 0.5), 
+                                 0 0 5px rgba(0, 242, 255, 0.3)`
+                    }}
+                  >
+                    {letter}
+                  </motion.span>
+                ))}
+              </motion.h3>
+            </div>
             <p className="text-gray-400 mb-4">
               A technical symposium organized by the Department of Information Technology. Join us for a day of innovation, competition, and celebration of technology!
             </p>

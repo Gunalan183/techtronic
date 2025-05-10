@@ -82,8 +82,8 @@ const App: React.FC = () => {
       {/* Background Audio */}
       <BackgroundAudio />
       
-      {/* Navigation */}
-      <Navbar />
+      {/* Navigation - only shown when loading is complete */}
+      {!isLoading && <Navbar />}
       
       <motion.div
         initial={{ opacity: 0 }}
