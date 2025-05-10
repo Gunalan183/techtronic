@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+/* Custom styles for TECH TRONICS'25 */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Container styling */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Neon button animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 242, 255, 0.8), 0 0 10px rgba(0, 242, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.8), 0 0 20px rgba(0, 242, 255, 0.6), 0 0 30px rgba(0, 242, 255, 0.4);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.btn-neon {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: pulse-glow 3s infinite;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-neon:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.8), 0 0 30px rgba(0, 242, 255, 0.6);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn-neon::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 242, 255, 0.3) 0%, transparent 70%);
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.6s, opacity 0.6s;
+}
+
+.btn-neon:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* Hero section particle animations */
+@keyframes float-particle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-50px) translateX(20px);
+    opacity: 0.3;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #00f2ff;
+  animation: float-particle 8s infinite alternate;
+}
+
+/* Custom pulsating text effect */
+@keyframes text-pulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.8), 0 0 20px rgba(0, 242, 255, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(0, 242, 255, 0.9), 0 0 30px rgba(0, 242, 255, 0.7), 0 0 40px rgba(0, 242, 255, 0.5);
+  }
+}
+
+.text-pulse {
+  animation: text-pulse 3s infinite;
+}
+
+/* Enhanced card hover effects */
+.event-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  h2 {
+    font-size: 2rem !important;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
   }
 }

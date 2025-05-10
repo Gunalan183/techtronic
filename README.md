@@ -44,3 +44,143 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+# TECH TRONICS'25
+
+![TECH TRONICS'25](https://i.imgur.com/example-image.jpg)
+
+## Description
+
+TECH TRONICS'25 is a responsive single-page React website for the Department of Information Technology symposium. The website features a futuristic neon theme with a black background and glowing text and neon-colored accents such as electric blue, purple, and lime green.
+
+## Features
+
+- **Futuristic Neon Theme**: Dark background with glowing text and neon-colored accents
+- **Responsive Design**: Mobile-first approach ensuring compatibility across all devices
+- **Smooth Animations**: Uses Framer Motion for smooth transitions and animations
+- **Interactive Elements**: Hover effects, animated borders, and interactive event cards
+- **Comprehensive Sections**: Hero, About, Guidelines, Events, Coordinators, and Footer
+
+## Technologies Used
+
+- React with TypeScript
+- Tailwind CSS for styling
+- Framer Motion for animations
+- React Scroll for smooth scrolling
+
+## Event Sections
+
+The website features the following events:
+
+1. Front-End Design
+2. Paper Presentation
+3. Cyfer Shift
+4. Debugging
+5. Connection & Memorize the Image
+6. IPL Auction
+7. Free Fire
+8. Chess
+
+Each event is presented in an interactive card with detailed rules and contact information.
+
+## Coordinators
+
+- **Staff Coordinator**: Jothilakshmi - 6383789500
+- **Student Coordinators**:
+  - Ishwarya Lakshmi M - 86672 13578
+  - Hemnath M - 86809 64114
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/techtronics25.git
+   ```
+
+2. Navigate to the project directory
+   ```bash
+   cd techtronics25
+   ```
+
+3. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
+
+4. Start the development server
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+5. Open your browser and navigate to `http://localhost:3000`
+
+## Folder Structure
+
+```
+techtronics25/
+├── public/
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   ├── components/
+│   │   ├── common/
+│   │   │   └── NotificationBar.tsx
+│   │   └── sections/
+│   │       ├── About.tsx
+│   │       ├── Coordinators.tsx
+│   │       ├── Events.tsx
+│   │       ├── Footer.tsx
+│   │       ├── Guidelines.tsx
+│   │       └── Hero.tsx
+│   ├── App.css
+│   ├── App.tsx
+│   ├── index.css
+│   └── index.tsx
+├── package.json
+├── tailwind.config.js
+└── tsconfig.json
+```
+
+## Customization
+
+### Theme Colors
+
+The primary theme colors can be modified in the `tailwind.config.js` file:
+
+```javascript
+theme: {
+  extend: {
+    colors: {
+      neonBlue: '#00f2ff',
+      neonPurple: '#b300ff',
+      neonGreen: '#39ff14',
+      darkBg: '#070707',
+    },
+    // ...
+  },
+},
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- Department of Information Technology
+- All event coordinators and participants
