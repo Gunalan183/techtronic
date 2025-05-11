@@ -99,8 +99,10 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          <a href="#top" className="text-xl md:text-2xl font-bold text-white neon-text">
-            TECH<span className="text-neonBlue">TRONICS</span>'25
+          <a href="#top" className="text-xl md:text-2xl font-bold">
+            <span className="neon-white" style={{ transition: 'none' }}>TECH</span>
+            <span className="neon-white" style={{ transition: 'none' }}>TRONICS</span>
+            <span className="neon-gold" style={{ transition: 'none' }}>'25</span>
           </a>
           
           {/* Desktop Navigation */}
@@ -145,46 +147,65 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            className="md:hidden glass-effect border-t border-gray-800 mt-2"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            className="md:hidden fixed top-[60px] left-0 right-0 bottom-0 z-50 bg-black backdrop-blur-lg"
+            initial={{ x: '100%', opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: '100%', opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           >
-            <ul className="flex flex-col py-2">
-              {navLinks.map((link) => (
-                <li key={link.href} className="py-2">
-                  <a 
-                    href={link.href} 
-                    className={`block px-6 py-2 transition-colors duration-300 ${
-                      activeSection === link.href.substring(1) 
-                        ? 'text-neonBlue font-semibold' 
-                        : 'text-gray-300'
-                    }`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActiveSection(link.href.substring(1));
-                      setIsOpen(false);
-                      const element = document.getElementById(link.href.substring(1));
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
+            <div className="h-full flex flex-col justify-between py-6">
+              <ul className="flex flex-col py-4 space-y-4">
+                {navLinks.map((link) => (
+                  <motion.li 
+                    key={link.href} 
+                    className="py-2"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.1 * navLinks.indexOf(link) }}
                   >
-                    {link.title}
-                  </a>
-                </li>
-              ))}
-              <li className="px-6 py-2">
-                <a 
-                  href="#register" 
-                  className="inline-block px-4 py-2 bg-transparent border border-neonBlue text-neonBlue rounded-md transition-all duration-300 hover:bg-neonBlue/20"
-                  onClick={() => setIsOpen(false)}
+                    <a 
+                      href={link.href} 
+                      className={`block px-8 py-3 text-xl transition-colors duration-300 ${
+                        activeSection === link.href.substring(1) 
+                          ? 'text-neonBlue font-semibold border-l-4 border-neonBlue pl-7' 
+                          : 'text-gray-300'
+                      }`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActiveSection(link.href.substring(1));
+                        setIsOpen(false);
+                        const element = document.getElementById(link.href.substring(1));
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                    >
+                      {link.title}
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+              
+              <div className="px-8 mt-auto">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
                 >
-                  Register
-                </a>
-              </li>
-            </ul>
+                  <a 
+                    href="#register" 
+                    className="block w-full text-center py-3 px-6 bg-neonBlue/20 border-2 border-neonBlue text-neonBlue rounded-md transition-all duration-300 hover:bg-neonBlue/30 text-lg font-semibold"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Register Now
+                  </a>
+                  
+                  <div className="mt-6 text-center text-gray-500 text-sm">
+                    <p>© 2025 TECHTRONICS. All rights reserved.</p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

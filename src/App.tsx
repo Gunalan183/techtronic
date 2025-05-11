@@ -4,6 +4,7 @@ import './App.css';
 
 // Section Components
 import Hero from './components/sections/Hero';
+import Countdown from './components/sections/Countdown';
 import About from './components/sections/About';
 import Events from './components/sections/Events';
 import Footer from './components/sections/Footer';
@@ -91,6 +92,7 @@ const App: React.FC = () => {
         transition={{ duration: 1 }}
       >
         <Hero />
+        <Countdown />
         <About />
         <Events />
         <Footer />

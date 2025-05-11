@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TechBackground from '../common/TechBackground';
 
 const About: React.FC = () => {
   return (
@@ -20,6 +21,10 @@ const About: React.FC = () => {
         {/* Overlay to darken video */}
         <div className="absolute inset-0 bg-darkBg opacity-60"></div>
       </div>
+      
+      {/* Technical animated background */}
+      <TechBackground variant="purple" intensity="low" animated={true} />
+      
       <div className="container mx-auto px-4">
         <motion.div 
           className="glass-effect p-8 md:p-12 max-w-4xl mx-auto"

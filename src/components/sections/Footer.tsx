@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TechBackground from '../common/TechBackground';
 
 const Footer: React.FC = () => {
   return (
     <footer className="py-12 border-t border-gray-800 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(#00f2ff_1px,transparent_1px)] [background-size:40px_40px] opacity-5"></div>
+      {/* Technical animated background */}
+      <TechBackground variant="blue" intensity="low" animated={true} />
       
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -22,8 +24,7 @@ const Footer: React.FC = () => {
                     key={i}
                     className={`${letter === ' ' ? 'mx-1' : ''} text-neonBlue`}
                     style={{
-                      textShadow: `0 0 3px rgba(0, 242, 255, 0.5), 
-                                 0 0 5px rgba(0, 242, 255, 0.3)`
+                     
                     }}
                   >
                     {letter}
@@ -110,11 +111,9 @@ const Footer: React.FC = () => {
       
         <div className="border-t border-gray-800 mt-10 pt-6">
           <div className="text-center">
-            <p className="text-gray-400 text-sm mb-2">
-              {new Date().getFullYear()} TECH TRONICS'25. All rights reserved.
-            </p>
+            
             <div className="text-sm text-gray-400">
-              <span>Designed with ❤️ by </span>
+              <span>Designed and developed  by </span>
               <a href="https://www.linkedin.com/in/gunalan18/" target="_blank" rel="noopener noreferrer" className="text-neonBlue hover:text-neonBlue/80 transition-colors">Gunalan</a>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import TechBackground from '../common/TechBackground';
 
 interface Event {
   id: number;
@@ -173,7 +174,6 @@ const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
 
 const Events: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'all' | 'technical' | 'nonTechnical'>('all');
-  const [hoveredEvent, setHoveredEvent] = useState<number | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
   const events: Event[] = [
@@ -367,13 +367,7 @@ const Events: React.FC = () => {
     return true;
   });
 
-  const handleMouseEnter = (id: number) => {
-    setHoveredEvent(id);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredEvent(null);
-  };
+  // Hover handlers removed as we're using permanent glow effect
 
   const handleMoreInfo = (event: Event) => {
     setSelectedEvent(event);
@@ -402,32 +396,8 @@ const Events: React.FC = () => {
         <div className="absolute inset-0 bg-darkBg opacity-60"></div>
       </div>
       
-      {/* Tech-themed background elements */}
-      <div className="absolute inset-0 z-1">
-        {/* Circuit pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(#00f2ff_1px,transparent_1px)] [background-size:40px_40px] opacity-5"></div>
-        
-        {/* Binary code pattern */}
-        <div className="absolute inset-0 overflow-hidden opacity-5">
-          <div className="absolute -top-20 left-0 text-[8px] text-neonBlue font-mono opacity-20 whitespace-nowrap animate-scrollText">
-            {Array(20).fill(0).map((_, i) => (
-              <div key={i} className="mb-2">
-                {Array(100).fill(0).map((_, j) => (
-                  <span key={j}>{Math.random() > 0.5 ? '1' : '0'}</span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Floating tech elements */}
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-neonBlue/20 rounded-full opacity-10 animate-pulse"></div>
-        <div className="absolute top-3/4 right-1/4 w-48 h-48 border border-neonGreen/20 rounded-full opacity-10 animate-pulse"></div>
-        <div className="absolute top-1/2 left-3/4 w-24 h-24 border border-neonPurple/20 rounded-full opacity-10 animate-pulse"></div>
-        
-        {/* Grid lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00f2ff10_1px,transparent_1px),linear-gradient(to_bottom,#00f2ff10_1px,transparent_1px)] [background-size:40px_40px] opacity-5"></div>
-      </div>
+      {/* Technical animated background */}
+      <TechBackground variant="dark" intensity="medium" animated={true} />
 
       <AnimatePresence>
         {selectedEvent && <EventModal event={selectedEvent} onClose={closeModal} />}
@@ -489,13 +459,11 @@ const Events: React.FC = () => {
           {filteredEvents.map((event, index) => (
             <motion.div
               key={event.id}
-              className={`glass-card p-6 rounded-lg transition-all duration-200 relative overflow-hidden ${hoveredEvent === event.id ? 'glow-card' : ''}`}
+              className="glass-card glow-card p-6 rounded-lg transition-all duration-200 relative overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              onMouseEnter={() => handleMouseEnter(event.id)}
-              onMouseLeave={handleMouseLeave}
             >
               {/* Event Type Badge */}
               <span className={`absolute top-3 right-3 px-2 py-1 rounded-full text-xs font-medium

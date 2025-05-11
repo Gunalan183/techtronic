@@ -21,8 +21,78 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Orbitron', sans-serif;
 }
 
+@keyframes neonFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 2px var(--neon-color, #00f0ff),
+                 0 0 4px var(--neon-color, #00f0ff),
+                 0 0 8px var(--neon-color, #00f0ff);
+  }
+  20%, 22%, 24%, 55% {
+    text-shadow: none;
+  }
+}
+
+@keyframes subtleFlicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.subtle-flicker {
+  animation: subtleFlicker 2s infinite alternate;
+}
+
+@keyframes bgPulse {
+  0%, 100% {
+    background-color: rgba(0, 240, 255, 0);
+  }
+  50% {
+    background-color: rgba(0, 240, 255, 0.1);
+  }
+}
+
 .neon-text {
-  text-shadow: 0 0 5px rgba(0, 242, 255, 0.8), 0 0 10px rgba(0, 242, 255, 0.5), 0 0 15px rgba(0, 242, 255, 0.3);
+  --neon-color: #00f0ff;
+  color: var(--neon-color);
+  text-shadow: 0 0 2px var(--neon-color), 0 0 4px var(--neon-color), 0 0 8px var(--neon-color);
+  animation: neonFlicker 3s infinite alternate;
+}
+
+.neon-white {
+  --neon-color: #ffffff;
+  color: var(--neon-color);
+  text-shadow: 0 0 2px var(--neon-color), 0 0 4px var(--neon-color), 0 0 8px var(--neon-color);
+  animation: neonFlicker 3s infinite alternate;
+}
+
+.neon-purple {
+  --neon-color: #b300ff;
+  color: var(--neon-color);
+  text-shadow: 0 0 2px var(--neon-color), 0 0 4px var(--neon-color), 0 0 8px var(--neon-color);
+  animation: neonFlicker 3.5s infinite alternate;
+}
+
+.neon-gold {
+  --neon-color: #ffd700;
+  color: var(--neon-color);
+  text-shadow: 0 0 2px var(--neon-color), 0 0 4px var(--neon-color), 0 0 8px var(--neon-color);
+  animation: neonFlicker 3s infinite alternate;
+}
+
+.neon-green {
+  --neon-color: #39ff14;
+  color: var(--neon-color);
+  text-shadow: 0 0 2px var(--neon-color), 0 0 4px var(--neon-color), 0 0 8px var(--neon-color);
+  animation: neonFlicker 2.5s infinite alternate;
+}
+
+.neon-bg {
+  animation: bgPulse 4s infinite;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
 }
 
 .neon-border {

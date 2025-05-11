@@ -111,15 +111,11 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onLoadingComplete }) => {
                   className={`text-5xl md:text-7xl font-bold ${
                     letter === ' ' ? 'mx-2' : ''
                   } ${
-                    i % 3 === 0 ? 'text-neonBlue' : 
-                    i % 3 === 1 ? 'text-neonPurple' : 
-                    'text-neonGreen'
+                    i >= 12 ? 'text-yellow-400' : 'text-white'
                   }`}
                   style={{
                     textShadow: `0 0 10px ${
-                      i % 3 === 0 ? 'rgba(0, 242, 255, 0.7)' : 
-                      i % 3 === 1 ? 'rgba(179, 0, 255, 0.7)' : 
-                      'rgba(57, 255, 20, 0.7)'
+                      i >= 12 ? 'rgba(255, 215, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)'
                     }`
                   }}
                 >

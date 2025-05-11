@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import TechBackground from '../common/TechBackground';
+
+// We'll use CSS classes for the neon flicker effect
 
 const Hero: React.FC = () => {
-  const letters = ['T', 'E', 'C', 'H', ' ', 'T', 'R', 'O', 'N', 'I', 'C', 'S', "'", '2', '5'];
   return (
     <section id="top" className="flex justify-center items-center min-h-screen relative overflow-hidden">
       {/* Background Video */}
@@ -22,38 +24,8 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-darkBg opacity-50"></div>
       </div>
       
-      {/* Animated background grid effect */}
-      <motion.div 
-        className="absolute inset-0 bg-[radial-gradient(#00f2ff_1px,transparent_1px)] [background-size:40px_40px] z-10"
-        initial={{ opacity: 0 }}
-        animate={{ 
-          opacity: [0.1, 0.2, 0.1],
-          scale: [1, 1.05, 1],
-          rotate: [0, 1, 0]
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: "reverse"
-        }}
-      ></motion.div>
-      
-      {/* Second animated grid with different size and color */}
-      <motion.div 
-        className="absolute inset-0 bg-[radial-gradient(#b300ff_0.8px,transparent_0.8px)] [background-size:30px_30px] z-10"
-        initial={{ opacity: 0 }}
-        animate={{ 
-          opacity: [0.05, 0.15, 0.05],
-          scale: [1, 1.1, 1],
-          rotate: [0, -1, 0]
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          repeatType: "reverse",
-          delay: 1
-        }}
-      ></motion.div>
+      {/* Technical animated background */}
+      <TechBackground variant="default" intensity="medium" animated={true} />
       
       <div className="container mx-auto px-4 text-center z-10 relative">
         {/* Royal decorative elements */}
@@ -62,66 +34,52 @@ const Hero: React.FC = () => {
           <div className="w-16 h-1 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-2"></div>
           <div className="w-32 h-1 bg-gradient-to-r from-transparent via-yellow-300 to-transparent mx-2"></div>
         </div>
-        <motion.div 
-          className="flex flex-wrap justify-center text-4xl md:text-6xl lg:text-8xl font-bold mb-6 revolving-dor-font tracking-wider"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+        <h1 
+          className="text-4xl md:text-6xl lg:text-8xl font-bold mb-6 tracking-wider chopsic-font flex flex-wrap justify-center"
           style={{
-            fontFamily: "'RevolvingDor', 'Arial', sans-serif",
-            textShadow: '0 0 10px rgba(179, 0, 255, 0.5), 0 0 20px rgba(0, 242, 255, 0.4), 0 0 30px rgba(255, 215, 0, 0.3)',
             transform: 'perspective(800px) rotateX(5deg)',
-            background: 'linear-gradient(to bottom, #ffd700, #f5f5f5, #ffd700)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            borderBottom: '2px solid rgba(255, 215, 0, 0.3)',
             paddingBottom: '10px',
             position: 'relative',
           }}
         >
-          {letters.map((letter, i) => {
-            // Determine if the letter is part of TECH or '25 (should be neon blue)
-            // or part of TRONICS (should be neon white)
-            // All letters will have the royal gold gradient look
-            const textColor = 'text-transparent'; // Using transparent as we'll use gradient
-            
-            // Royal gold shadow effect
-            const shadowColor = 
-              '0 0 5px rgba(255, 215, 0, 0.8), 0 0 15px rgba(255, 215, 0, 0.5), 0 0 25px rgba(179, 0, 255, 0.3)';
-            
-            const hoverShadowColor = 
-              '0 0 10px rgba(255, 215, 0, 0.9), 0 0 20px rgba(255, 215, 0, 0.7), 0 0 30px rgba(179, 0, 255, 0.5)';
-            
-            return (
-              <motion.span
-                key={i}
-                className={`${letter === ' ' ? 'mx-2' : 'mx-[1px] md:mx-[2px]'} inline-block ${textColor}`}
-                style={{
-                  textShadow: shadowColor,
-                  transition: 'all 0.2s ease-out',
-                  background: 'linear-gradient(to bottom, #ffd700, #f8f8f8, #daa520)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  fontWeight: 'bold',
-                }}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { delay: 0.2 + (i * 0.05) }
-                }}
-                whileHover={{
-                  scale: 1.2,
-                  rotate: Math.random() > 0.5 ? 5 : -5,
-                  textShadow: hoverShadowColor,
-                  transition: { duration: 0.2, ease: "easeOut" }
-                }}
-              >
-                {letter}
-              </motion.span>
-            );
-          })}
-        </motion.div>
+          {/* For larger screens */}
+          <div className="hidden md:block">
+            <span className="subtle-flicker" style={{ 
+              color: '#ffd700',
+              textShadow: '0 0 1px #ffd700'
+            }}>TECH</span>
+            <span className="subtle-flicker" style={{ 
+              color: '#ffffff',
+              textShadow: '0 0 1px #ffffff',
+              animationDelay: '0.5s'
+            }}>TRONICS</span>
+            <span className="subtle-flicker" style={{ 
+              color: '#ffd700',
+              textShadow: '0 0 1px #ffd700',
+              animationDelay: '1s'
+            }}>'25</span>
+          </div>
+          
+          {/* For mobile screens */}
+          <div className="md:hidden">
+            <div>
+              <span className="subtle-flicker" style={{ 
+                color: '#ffd700',
+                textShadow: '0 0 1px #ffd700'
+              }}>TECH</span>
+              <span className="subtle-flicker" style={{ 
+                color: '#ffffff',
+                textShadow: '0 0 1px #ffffff',
+                animationDelay: '0.5s'
+              }}>TRONICS</span>
+            </div>
+            <span className="subtle-flicker" style={{ 
+              color: '#ffd700',
+              textShadow: '0 0 1px #ffd700',
+              animationDelay: '1s'
+            }}>'25</span>
+          </div>
+        </h1>
         
         {/* Royal decorative elements after title */}
         <div className="hidden md:flex justify-center mb-8">
